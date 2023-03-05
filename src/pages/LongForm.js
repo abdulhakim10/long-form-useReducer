@@ -1,53 +1,9 @@
 import React, { useReducer } from "react";
+import { initialState, reducer } from "../state/formReducer";
 
 
 const LongForm = () => {
-  
-  // initial state declare
-  const initialState = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    gender: "",
-    education: "",
-    quantity: 0,
-    feedback: "",
-    term: false
-
-  }
-
-  // reducer function
-  const reducer = (state, action) => {
-    console.log(action);
-    switch (action.type) {
-      case "INPUT":
-        return{
-          ...state,
-         [ action.payload.name]: action.payload.value
-        };
-        case "TOGGLE":
-          return{
-            ...state,
-            term: !state.term
-          };
-          case "INCREMENT":
-            // console.log(quantity)
-            return {
-                ...state ,
-                quantity: state.quantity + action.payload
-            };
-          case "DECREMENT":
-            // console.log(quantity)
-            return {
-                ...state ,
-                quantity: state.quantity - action.payload
-            };
-            
-
-      default:
-        return state;
-    }
-  }
+ 
  
 
   const [state, dispatch] = useReducer(reducer, initialState);

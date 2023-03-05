@@ -1,5 +1,6 @@
 export const actionTypes = {
-    INPUT: "INPUT",
-    TOGGLE: "TOGGLE",
-  };
-  
+  INPUT: "INPUT",
+  TOGGLE : "TOGGLE",
+  INCREMENT: "INCREMENT",
+  DECREMENT: "DECREMENT"
+}
